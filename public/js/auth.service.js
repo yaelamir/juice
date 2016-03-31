@@ -12,9 +12,15 @@
 
     var service = {
       logIn:      logIn,
-      isLoggedIn: isLoggedIn
+      isLoggedIn: isLoggedIn,
+      logOut:     logOut
     };
     return service;
+
+    function logOut() {
+      token.destroy();
+      $log.info("Logged out…");
+    }
 
     function isLoggedIn() {
       return (token.retrieve() != null);

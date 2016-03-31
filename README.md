@@ -49,7 +49,7 @@ __&#42;__ — *For working with JWTs, see also: [`angular-jwt`][ng-jwt].*
       taken, I will be alerted about this.
       - [x] *Must wireframe first…*
 - [x] 2.2 AAU, when I'm authenticated, I see a sign out button in the navbar.
-- [ ] 2.3 **AAU, when I am logged in and click on the "Sign out" button, I 
+- [x] 2.3 **AAU, when I am logged in and click on the "Sign out" button, I 
       log out of the application.**
 - [ ] 2.4 **AAU, when I log out I am redirected back to the Welcome page.**
 

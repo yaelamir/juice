@@ -11,6 +11,11 @@
     var vm = this;
 
     vm.authService = authService;
+    vm.logOut      = logOut;
+
+    function logOut() {
+      authService.logOut();
+    }
 
     $log.info("NavbarController loaded!");
   }
