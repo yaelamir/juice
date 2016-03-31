@@ -60,6 +60,10 @@ header {
   text-transform: uppercase;
 }
 
+.navbar-brand {
+  padding: 5px 0;
+}
+
 form {
   text-align: left;
   max-width: 600px;
