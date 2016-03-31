@@ -20,9 +20,11 @@
         controllerAs: "vm"
       })
       .state("profile", {
-        url:         "/profile",
-        templateUrl: "/js/profile.html",
-        authorized:  true
+        url:          "/profile",
+        templateUrl:  "/js/profile.html",
+        controller:   "ProfileController",
+        controllerAs: "vm",
+        authorized:   true
       });
 
     $urlRouterProvider.otherwise("/");

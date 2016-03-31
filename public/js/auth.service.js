@@ -11,11 +11,31 @@
     $log.info("auth service loaded!");
 
     var service = {
-      logIn:      logIn,
-      isLoggedIn: isLoggedIn,
-      logOut:     logOut
+      logIn:       logIn,
+      isLoggedIn:  isLoggedIn,
+      logOut:      logOut,
+      currentUser: currentUser
     };
     return service;
+
+    function currentUser() {
+      var tokenData = token.decode();
+
+      if (tokenData) {
+        // No real reason to do this, just showing you
+        // how it can be done. We can clean out (remove)
+        // properties from the token that are about the token
+        // itself, not the user; this cleans up the data.
+        tokenData.expiresAt = Date(tokenData.exp);
+
+        delete tokenData.exp;
+        delete tokenData.iat;
+      }
+
+      // $log.info("Current user retrieved:", tokenData);
+
+      return tokenData;
+    }
 
     function logOut() {
       token.destroy();

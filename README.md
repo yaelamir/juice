@@ -75,7 +75,7 @@ the "one component per file" rule!*
 
 ##### Step Four
 
-- [ ] 4.1 AAU, when I am on the profile page, I see an update form.
+- [x] 4.1 AAU, when I am on the profile page, I see an update form.
 - [ ] 4.2 AAU, I can update my user info.
   - [ ] 4.2a Update user info on the server.
   - [ ] 4.2b Update user info in the token (by generating a new token…).
