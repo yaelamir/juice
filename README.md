@@ -51,7 +51,7 @@ __&#42;__ — *For working with JWTs, see also: [`angular-jwt`][ng-jwt].*
 - [x] 2.2 AAU, when I'm authenticated, I see a sign out button in the navbar.
 - [x] 2.3 **AAU, when I am logged in and click on the "Sign out" button, I 
       log out of the application.**
-- [ ] 2.4 **AAU, when I log out I am redirected back to the Welcome page.**
+- [x] 2.4 **AAU, when I log out I am redirected back to the Welcome page.**
 
 > Here we are going to update the user based on some information from
 > the server, specifically a certain type of failed request. We will
