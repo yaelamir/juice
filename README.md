@@ -50,8 +50,9 @@ __&#42;__ — *For working with JWTs, see also: [`angular-jwt`][ng-jwt].*
       - [x] *Must wireframe first…*
 - [x] 2.2 AAU, when I'm authenticated, I see a sign out button in the navbar.
 - [x] 2.3 **AAU, when I am logged in and click on the "Sign out" button, I 
-      log out of the application.**
+      log out of the application.** (First/second commit!)
 - [x] 2.4 **AAU, when I log out I am redirected back to the Welcome page.**
+      (Third commit!)
 
 > Here we are going to update the user based on some information from
 > the server, specifically a certain type of failed request. We will
@@ -59,7 +60,7 @@ __&#42;__ — *For working with JWTs, see also: [`angular-jwt`][ng-jwt].*
 
 ##### Step Three
 
-- [ ] 3.1 AAU, when I am signed in, I see a profile button in the navbar.
+- [x] 3.1 AAU, when I am signed in, I see a profile button in the navbar.
 - [ ] 3.2 AAU, when I click on the profile button, I go to the profile page.
 - [ ] 3.3 AAU, when I am not *logged in*, if I try to go to the profile page,
       I will be redirected to the signin page.
