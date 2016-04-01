@@ -52,6 +52,7 @@
       // in to ui-router, it just happens to match the property I added
       // to the state definition on line #25 above!
       if (toState.authorized && !authService.isLoggedIn()) {
+        $log.debug(`Attempted to go to ${toState.url} but was not logged in.`);
         $state.go("signin");    // Go here immediately, and
         event.preventDefault(); // do not let the event continue.
       }

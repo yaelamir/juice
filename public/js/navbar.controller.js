@@ -24,6 +24,6 @@
       $state.go('welcome');
     }
 
-    $log.info("NavbarController loaded!");
+    $log.debug("NavbarController loaded!");
   }
 })();

@@ -8,7 +8,7 @@
   authService.$inject = ["$log", "tokenService", "$http"];
 
   function authService($log, token, $http) {
-    $log.info("auth service loaded!");
+    $log.debug("authService loaded!");
 
     var service = {
       logIn:        logIn,
@@ -46,14 +46,14 @@
         delete tokenData.iat;
       }
 
-      // $log.info("Current user retrieved:", tokenData);
+      $log.debug("Current user retrieved:", tokenData);
 
       return tokenData;
     }
 
     function logOut() {
       token.destroy();
-      $log.info("Logged out…");
+      $log.debug("Logged out…");
     }
 
     function isLoggedIn() {

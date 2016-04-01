@@ -8,7 +8,7 @@
   tokenService.$inject = ["$log", "$window"];
 
   function tokenService($log, $window) {
-    $log.info("token service loaded!");
+    $log.debug("tokenService loaded!");
 
     const TOKEN_KEY = 'shmee-banana';
     var service = {

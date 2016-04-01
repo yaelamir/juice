@@ -35,13 +35,13 @@
         .then(
           // on success
           function(decodedToken) {
-            $log.info('Logged in!', decodedToken);
+            $log.debug('Logged in!', decodedToken);
             $state.go('profile');
           },
           // on error
           function(err) {
             if (err.status === 409) vm.conflict = true;
-            $log.info('Error Claire-r:', err);
+            $log.debug('Error Claire-r:', err);
           }
         );
     }
@@ -52,16 +52,16 @@
         .then(
           // on success
           function(decodedToken) {
-            $log.info('Logged in!', decodedToken);
+            $log.debug('Logged in!', decodedToken);
             $state.go('profile');
           },
           // on error
           function(err) {
-            $log.info('Error:', err);
+            $log.debug('Error:', err);
           }
         );
     }
 
-    $log.info("SignInController loaded!");
+    $log.debug("SignInController loaded!");
   }
 })();

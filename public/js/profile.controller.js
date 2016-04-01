@@ -30,14 +30,12 @@
         })
         .then(
           function(newDecodedToken) {
-            $log.info('User updated and token refreshed:', newDecodedToken);
+            $log.debug('User updated and token refreshed:', newDecodedToken);
           })
-        .catch(function(err) {
-          $log.info('Error:', err);
-        });
+        .catch(function(err) { $log.debug('Error:', err); });
     }
 
-    $log.info('ProfileController loaded!');
+    $log.debug('ProfileController loaded!');
   }
 
 })();
