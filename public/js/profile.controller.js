@@ -34,10 +34,6 @@
           })
         .catch(function(err) {
           $log.info('Error:', err);
-
-          // If you ever get a 401 or 403 (no authentication or
-          // bad authorization) error, redirect to the sign in page.
-          if (err.status === 401 || err.status === 403) $state.go('signin');
         });
     }
 

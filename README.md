@@ -93,7 +93,7 @@ the "one component per file" rule!*
       automatically on every request, [called an interceptor][interceptors].
       - [x] Add Content-Type headers.
       - [x] Add Authorization headers when logged in.
-- [ ] Use interceptors to handle certain types of 
+- [x] Use interceptors to handle certain types of 
       responses or errors: specifically for us, 401/403 auth errors.
 - [ ] Turn all logging into `$log.debug()` so that we can turn it on in
       development, or off in production!
