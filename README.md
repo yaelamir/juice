@@ -87,7 +87,7 @@ the "one component per file" rule!*
 
 ## Refactoring 2
 
-- [ ] Now that we have a working profile page, let's redirect the users
+- [x] Now that we have a working profile page, let's redirect the users
       there instead of the welcome page when they log in!
 - [ ] Create a special type of service that will set the headers 
       automatically on every request, [called an interceptor][interceptors].
