@@ -10,6 +10,7 @@ var token = require('../config/token_auth');
 // users resource paths:
 router.post('/users',    usersCtrl.create);
 router.get( '/users/me', token.authenticate, usersCtrl.me);
+router.put( '/users/me', token.authenticate, usersCtrl.update);
 
 router.post('/token',    token.create);
 
