@@ -5,9 +5,9 @@
     .module('app')
     .controller('ProfileController', ProfileController);
 
-  ProfileController.$inject = ["$log", "authService", "userService"];
+  ProfileController.$inject = ["$log", "authService", "userService", "$state"];
 
-  function ProfileController($log, authService, userService) {
+  function ProfileController($log, authService, userService, $state) {
     var vm = this;
 
     vm.formData = {
@@ -32,7 +32,13 @@
           function(newDecodedToken) {
             $log.info('User updated and token refreshed:', newDecodedToken);
           })
-        .catch(function(err) { $log.info('Error:', err); });
+        .catch(function(err) {
+          $log.info('Error:', err);
+
+          // If you ever get a 401 or 403 (no authentication or
+          // bad authorization) error, redirect to the sign in page.
+          if (err.status === 401 || err.status === 403) $state.go('signin');
+        });
     }
 
     $log.info('ProfileController loaded!');

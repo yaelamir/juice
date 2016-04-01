@@ -79,7 +79,7 @@ the "one component per file" rule!*
 - [x] 4.2 AAU, I can update my user info.
   - [x] 4.2a Update user info on the server.
   - [x] 4.2b Update user info in the token (by generating a new token…).
-- [ ] 4.3 AAU, if I try to update my user info, but I am not *logged in*,
+- [x] 4.3 AAU, if I try to update my user info, but I am not *logged in*,
       I will be redirected to the signin page.
 
 > Here we will make an authenticated request: in order to do this we
