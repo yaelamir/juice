@@ -95,7 +95,7 @@ the "one component per file" rule!*
       - [x] Add Authorization headers when logged in.
 - [x] Use interceptors to handle certain types of 
       responses or errors: specifically for us, 401/403 auth errors.
-- [ ] Turn all logging into `$log.debug()` so that we can turn it on in
+- [x] Turn all logging into `$log.debug()` so that we can turn it on in
       development, or off in production!
 - [ ] Folder structure: *we should have been doing this from the get-go*,
       but better late than never, I say!
