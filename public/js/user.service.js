@@ -20,10 +20,7 @@
       var promise = $http({
         method: 'POST',
         url:    '/api/users',
-        data:   data,
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        data:   data
       });
 
       return promise;
@@ -36,8 +33,7 @@
         data:   data,
         headers: {
           // Add an auth header to ensure that this request goes thru!
-          'Authorization': 'Bearer ' + token.retrieve(),
-          'Content-Type':  'application/json'
+          'Authorization': 'Bearer ' + token.retrieve()
         }
       });
 

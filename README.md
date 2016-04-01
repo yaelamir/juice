@@ -91,7 +91,7 @@ the "one component per file" rule!*
       there instead of the welcome page when they log in!
 - [ ] Create a special type of service that will set the headers 
       automatically on every request, [called an interceptor][interceptors].
-      - [ ] Add Content-Type headers.
+      - [x] Add Content-Type headers.
       - [ ] Add Authorization headers when logged in.
 - [ ] Use interceptors to handle certain types of 
       responses or errors: specifically for us, 401/403 auth errors.

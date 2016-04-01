@@ -23,10 +23,8 @@
       var promise = $http({
         method: 'POST',
         url:    '/api/users/me/token',
-        data:   {}, // May send *some* data in order to set Content-Type…
         headers: {
-          'Authorization': 'Bearer ' + token.retrieve(),
-          'Content-Type':  'application/json'
+          'Authorization': 'Bearer ' + token.retrieve()
         }
       })
       .then(function(res) {
@@ -69,10 +67,7 @@
       var promise = $http({
         method: 'POST',
         url:    '/api/token',
-        data:   data,
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        data:   data
       })
       .then(
         // if the request succeeded, then run this
