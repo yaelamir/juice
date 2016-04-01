@@ -21,13 +21,18 @@
       userService
         .update(vm.formData)
         .then(function(res) {
-          $log.info('Updated!', res);
-
           // Clear the password fields in the view (if they were used).
           vm.formData.password = '';
           vm.formData.passwordConfirmation = '';
         })
-        .catch(function(err) { $log.info('Error:', err); })
+        .then(function() {
+          return authService.refreshToken();
+        })
+        .then(
+          function(newDecodedToken) {
+            $log.info('User updated and token refreshed:', newDecodedToken);
+          })
+        .catch(function(err) { $log.info('Error:', err); });
     }
 
     $log.info('ProfileController loaded!');

@@ -11,12 +11,31 @@
     $log.info("auth service loaded!");
 
     var service = {
-      logIn:       logIn,
-      isLoggedIn:  isLoggedIn,
-      logOut:      logOut,
-      currentUser: currentUser
+      logIn:        logIn,
+      isLoggedIn:   isLoggedIn,
+      logOut:       logOut,
+      currentUser:  currentUser,
+      refreshToken: refreshToken
     };
     return service;
+
+    function refreshToken() {
+      var promise = $http({
+        method: 'POST',
+        url:    '/api/users/me/token',
+        data:   {}, // May send *some* data in order to set Content-Type…
+        headers: {
+          'Authorization': 'Bearer ' + token.retrieve(),
+          'Content-Type':  'application/json'
+        }
+      })
+      .then(function(res) {
+        token.store(res.data.token);
+        return token.decode();
+      });
+
+      return promise;
+    }
 
     function currentUser() {
       var tokenData = token.decode();
