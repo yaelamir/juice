@@ -89,10 +89,10 @@ the "one component per file" rule!*
 
 - [x] Now that we have a working profile page, let's redirect the users
       there instead of the welcome page when they log in!
-- [ ] Create a special type of service that will set the headers 
+- [x] Create a special type of service that will set the headers 
       automatically on every request, [called an interceptor][interceptors].
       - [x] Add Content-Type headers.
-      - [ ] Add Authorization headers when logged in.
+      - [x] Add Authorization headers when logged in.
 - [ ] Use interceptors to handle certain types of 
       responses or errors: specifically for us, 401/403 auth errors.
 - [ ] Turn all logging into `$log.debug()` so that we can turn it on in

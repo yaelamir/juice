@@ -9,6 +9,7 @@
 
   function configure($httpProvider) {
     $httpProvider.interceptors.push("jsonHeadersService");
+    $httpProvider.interceptors.push("tokenSigningService");
   }
 
 })();

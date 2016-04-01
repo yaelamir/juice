@@ -22,10 +22,7 @@
     function refreshToken() {
       var promise = $http({
         method: 'POST',
-        url:    '/api/users/me/token',
-        headers: {
-          'Authorization': 'Bearer ' + token.retrieve()
-        }
+        url:    '/api/users/me/token'
       })
       .then(function(res) {
         token.store(res.data.token);

@@ -30,11 +30,7 @@
       var promise = $http({
         method: 'PUT',
         url:    '/api/users/me',
-        data:   data,
-        headers: {
-          // Add an auth header to ensure that this request goes thru!
-          'Authorization': 'Bearer ' + token.retrieve()
-        }
+        data:   data
       });
 
       return promise;
