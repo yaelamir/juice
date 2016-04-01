@@ -2,10 +2,11 @@ var jwt = require('jsonwebtoken');
 
 var User = require('../models/user');
 
-// This file exposes two methods, both of which use the standard
-// Express middleware signature: (req, res, next) -> undefined
+// This file exposes three methods, all of which use the standard
+// Express middleware signature: function(req, res, next) -> undefined
 module.exports = {
   create:       create,
+  refresh:      refresh,
   authenticate: authenticate
 };
 
@@ -59,6 +60,23 @@ function create(req, res, next) {
         return res.status(403).json(message);
       }
 
+      var token = generateJwt(user);
+
+      res.json({
+        message: 'Successfully generated token',
+        token:   token
+      });
+    });
+}
+
+/**
+ * Creates a new JWT for an authenticated user (using the authenticate
+ * method below) and returns it.
+ */
+function refresh(req, res, next) {
+  User
+    .findById(req.decoded._id).exec()
+    .then(function(user) {
       var token = generateJwt(user);
 
       res.json({
