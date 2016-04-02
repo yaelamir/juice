@@ -11,17 +11,17 @@
     $stateProvider
       .state("welcome", {
         url:         "/",
-        templateUrl: "/js/welcome.html"
+        templateUrl: "/js/app/layouts/welcome.html"
       })
       .state("signin", {
         url:          "/signin",
-        templateUrl:  "/js/signin.html",
+        templateUrl:  "/js/app/auth/signin.html",
         controller:   "SignInController",
         controllerAs: "vm"
       })
       .state("profile", {
         url:          "/profile",
-        templateUrl:  "/js/profile.html",
+        templateUrl:  "/js/app/users/profile.html",
         controller:   "ProfileController",
         controllerAs: "vm",
         authorized:   true

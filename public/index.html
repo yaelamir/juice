@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
-  <script src="/js/jwt-decode.2.0.1.js"></script>
+  <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
@@ -42,18 +42,18 @@
     <span>© 2016, WDI</span>
   </footer>
 
-  <script src="/js/app.module.js"></script>
-  <script src="/js/app.debug.js"></script>
-  <script src="/js/app.httpInterceptors.js"></script>
-  <script src="/js/app.routes.js"></script>
-  <script src="/js/jsonHeaders.service.js"></script>
-  <script src="/js/tokenSigning.service.js"></script>
-  <script src="/js/authErrorRedirect.service.js"></script>
-  <script src="/js/token.service.js"></script>
-  <script src="/js/auth.service.js"></script>
-  <script src="/js/user.service.js"></script>
-  <script src="/js/signin.controller.js"></script>
-  <script src="/js/profile.controller.js"></script>
-  <script src="/js/navbar.controller.js"></script>
+  <script src="/js/app/app.module.js"></script>
+  <script src="/js/app/config/app.debug.js"></script>
+  <script src="/js/app/config/app.httpInterceptors.js"></script>
+  <script src="/js/app/config/app.routes.js"></script>
+  <script src="/js/app/config/jsonHeaders.service.js"></script>
+  <script src="/js/app/config/tokenSigning.service.js"></script>
+  <script src="/js/app/config/authErrorRedirect.service.js"></script>
+  <script src="/js/app/layouts/navbar.controller.js"></script>
+  <script src="/js/app/auth/token.service.js"></script>
+  <script src="/js/app/auth/auth.service.js"></script>
+  <script src="/js/app/auth/signin.controller.js"></script>
+  <script src="/js/app/users/user.service.js"></script>
+  <script src="/js/app/users/profile.controller.js"></script>
 </body>
 </html>
