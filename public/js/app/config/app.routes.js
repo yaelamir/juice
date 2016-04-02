@@ -25,6 +25,14 @@
         controller:   "ProfileController",
         controllerAs: "vm",
         authorized:   true
+      })
+      .state("cart", {
+        url: "/cart",
+        templateUrl: '/js/app/cart.html'
+      })
+      .state("order", {
+        url: "/order",
+        templateUrl: '/js/app/order.html'
       });
 
     $urlRouterProvider.otherwise("/");

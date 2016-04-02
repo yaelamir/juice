@@ -4,7 +4,7 @@
   <title>Auth App</title>
   <meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
@@ -16,31 +16,30 @@
 
 </head>
 <body>
-  <div class="container-fluid">
-    <header ng-controller="NavbarController as vm">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <a ui-sref="welcome" class="navbar-brand"><img src="/images/token-symbol.png" width="40" height="40"></a>
-          <div class="pull-right">
-            <button ng-show="vm.authService.isLoggedIn();" ui-sref="profile" type="button" class="btn btn-default navbar-btn"><i class="glyphicon glyphicon-cog"></i> Profile</button>
-            <button ng-hide="vm.authService.isLoggedIn();" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-            <button ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
-          </div>
+  <div>
+  <header ng-controller="NavbarController as vm">
+    <nav>
+        <div class="nav-wrapper navbar-fixed">
+          <a ui-sref="welcome" id="juicy-logo" class="left brand-logo">Juicy</a>
+          <ul id="nav" class="right hide-on-med-and-down">
+            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="order">Order</a></li>
+            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="cart">Cart</a></li>
+            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="profile">My Account</a></li>
+            <li><a ui-sref="welcome">About</a></li>
+            <li><a ng-hide="vm.authService.isLoggedIn();" ui-sref="signin">Login</a></li>
+            <li><a ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()">Logout</a></li>
+          </ul>
         </div>
       </nav>
-    </header>
 
-    <main class="content" ui-view>
+  </header>
+
+    <main ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
     </main>
   </div> <!-- div.container-fluid -->
 
-  <footer>
-    <hr>
-    <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
-    <br>
-    <span>© 2016, WDI</span>
-  </footer>
+
 
   <script src="/js/app/app.module.js"></script>
   <script src="/js/app/config/app.debug.js"></script>
