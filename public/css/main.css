@@ -64,28 +64,58 @@ form {
   border: 2px solid red;
 }
 
-.cards-image {
+/*.cards-image {
+  height: 175px;
+}*/
+
+.card .thumbnail .card-img {
   height: 175px;
 }
 
-img {
-  height: 175px;
+.card .card-img .big-picture {
+  height: 297px;
+  width: 505px;
 }
+
+.card .card-img .first-pic {
+  height: 297px;
+  width: 505px;
+}
+
+.card .card-img .lowest-pic {
+  height: 297px;
+  width: 505px;
+}
+
+.row .card-content {
+  /*background: red;*/
+  z-index: 1000px;
+}
+
+/*.index {
+  max-width: 900px;
+}*/
 
 nav {
-  background-color: #64D1A2;
+  /*background-color: black;*/
+  /*background-color: #64D1A2;*/
+  background-color: white;
+}
+
+ul * {
+  color: black;
 }
 
 p {
   font-size: 12px;
-  padding-bottom: 0;
+  /*padding-bottom: 0;*/
 }
 /*
 #big-picture {
   /*width: 100%;*/
-  height: auto;
+/*  height: auto;
   z-index: -1000px;
-}
+}*/
 */
 /*.about-cards {
   border: 5px solid black;
@@ -97,22 +127,22 @@ p {
   height: 265px;
 }*/
 
-img {
+/*img {
   height: auto;
   float: left;
-}
+}*/
 
 .border {
   border: 1px solid #64D1A2;
 }
 
 #image {
-  width: 100%;
-  height: auto;
-  margin-right: 15px;
-  margin-left: 100px;
+  width: auto;
+  height: 100%;
+  padding: 0;
+
 }
-.flow-text {
+/*.flow-text {
     display: inline-block;
     max-width: 500px;
     line-height: 1.75;
@@ -121,13 +151,30 @@ img {
     margin-right: 15px;
     margin-right: 70px;
     font-size: 12px;
-}
+}*/
+/*.card-content {
+  padding: 0;
+}*/
 
 .title {
   padding-top: 25px;
   height: 250px;
   margin-bottom: 150px;
   z-index: 1000px;
+  /*background-image: url("http://justjuice.org/wp-content/uploads/2014/11/breakfast-juicing.jpg") no-repeat;*/
+  /*background-image: url("http://www.healthista.com/wp-content/uploads/2015/01/juice-fast-day-one-slider.jpg");*/
+   /*background-color: transparent;*/
+  background-image: url("http://img.aws.livestrongcdn.com/ls-1200x630/cme/cme_public_images/www_livestrong_com/photos.demandstudios.com/getty/article/152/236/482162444_XS.jpg");
 }
 
+#juicy {
+  z-index: 5000px;
+  color: white;
+  /*-webkit-font-smoothing: antialiased !important;*/
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+#about-cards {
+  margin: 70px;
+}
 
