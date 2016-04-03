@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-  <title>Auth App</title>
+  <title>Juicy</title>
   <meta charset="utf-8">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
@@ -17,22 +17,21 @@
 </head>
 <body>
   <div>
-  <header ng-controller="NavbarController as vm">
-    <nav>
+    <header ng-controller="NavbarController as vm">
+      <nav>
         <div class="nav-wrapper navbar-fixed">
-          <a ui-sref="welcome" id="juicy-logo" class="left brand-logo">Juicy</a>
+          <a ng-class="active" ui-sref="welcome" id="juicy-logo" class="left brand-logo">Juicy</a>
           <ul id="nav" class="right hide-on-med-and-down">
-            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="order">Order</a></li>
-            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="cart">Cart</a></li>
-            <li><a ng-show="vm.authService.isLoggedIn();" ui-sref="profile">My Account</a></li>
-            <li><a ui-sref="welcome">About</a></li>
-            <li><a ng-hide="vm.authService.isLoggedIn();" ui-sref="signin">Login</a></li>
-            <li><a ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()">Logout</a></li>
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="order">Order</a></li>
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="cart">Cart</a></li>
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="profile">My Account</a></li>
+            <li><a ng-class="active" ui-sref="welcome">About</a></li>
+            <li><a ng-class="active" ng-hide="vm.authService.isLoggedIn();" ui-sref="signin">Login</a></li>
+            <li><a ng-class="active" ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn()">Logout</a></li>
           </ul>
         </div>
       </nav>
-
-  </header>
+    </header>
 
     <main ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->

@@ -17,7 +17,8 @@ html {
 }
 
 body {
-font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+font-family: 'Proxima N W01 Smbd';
+/*font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;*/
 /*font-family: 'Proxima N W01 Reg';*/
 font-size: 18px;
 letter-spacing: 1px;
@@ -62,3 +63,71 @@ form {
 #exampleInputEmail1.red-border {
   border: 2px solid red;
 }
+
+.cards-image {
+  height: 175px;
+}
+
+img {
+  height: 175px;
+}
+
+nav {
+  background-color: #64D1A2;
+}
+
+p {
+  font-size: 12px;
+  padding-bottom: 0;
+}
+/*
+#big-picture {
+  /*width: 100%;*/
+  height: auto;
+  z-index: -1000px;
+}
+*/
+/*.about-cards {
+  border: 5px solid black;
+}*/
+
+/*img {
+  float: left;
+  width: 484px;
+  height: 265px;
+}*/
+
+img {
+  height: auto;
+  float: left;
+}
+
+.border {
+  border: 1px solid #64D1A2;
+}
+
+#image {
+  width: 100%;
+  height: auto;
+  margin-right: 15px;
+  margin-left: 100px;
+}
+.flow-text {
+    display: inline-block;
+    max-width: 500px;
+    line-height: 1.75;
+    margin: 50px auto 50px auto;
+    margin-right: 75px;
+    margin-right: 15px;
+    margin-right: 70px;
+    font-size: 12px;
+}
+
+.title {
+  padding-top: 25px;
+  height: 250px;
+  margin-bottom: 150px;
+  z-index: 1000px;
+}
+
+
