@@ -16,12 +16,57 @@ html {
   min-height: 100%;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+      /*font-family: 'Futura Book,Arial,serif';*/
+      word-wrap: break-word;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      -o-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #232425;
+      /*font-family: 'Futura Book,Arial,serif';*/
+      /*font-family: 'Proxima N W01 Reg';*/
+      /*font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;*/
+      /*font-family: Futura Book,Arial,serif;*/
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-weight: 100;
+      letter-spacing: 3px;
+      /*text-shadow: 0px 0px 1px #000;*/
+      /*color: white;*/
+      z-index: 1000;
+  }
+
 body {
-font-family: 'Proxima N W01 Smbd';
+  word-wrap: break-word;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -o-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #232425;
+  font-family: 'Proxima N W01 Smbd';
+  /*text-transform: uppercase;*/
+  font-weight: normal;
+  background-color: #fff;
+
+/*font-family: 'Futura Book,Arial,serif';*/
+/*font-family: 'Proxima N W01 Smbd';*/
 /*font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;*/
 /*font-family: 'Proxima N W01 Reg';*/
 font-size: 18px;
 letter-spacing: 1px;
+}
+
+.nav-wrapper .navbar {
+  color: #232425;
+  font-family: sans-serif;
+  font-weight: 100;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #fff;
 }
 
 a {
@@ -35,7 +80,7 @@ a {
   /*margin: 0 auto -50px;  the bottom margin is the negative value of the footer's height */
 }
 
-.container-fluid {
+.container {
   margin-right: auto;
   margin-left: auto;
   max-width: 950px;
@@ -52,6 +97,8 @@ header {
 
 #juicy-logo {
   padding-left: 15px;
+  font-family: sans-serif;
+  font-weight: 200;
 }
 
 form {
@@ -69,32 +116,21 @@ form {
 }*/
 
 .card .thumbnail .card-img {
-  height: 175px;
+  min-height: 175px;
+  min-width: 175px;
 }
 
-.card .card-img .big-picture {
-  height: 297px;
-  width: 505px;
+#cards {
+  display: inline-block;
+  margin: 30px;
+  min-height: 175px;
+  max-width: 800px;
 }
 
-.card .card-img .first-pic {
-  height: 297px;
-  width: 505px;
+.lower-panels {
+  margin-top: 50px;
+  max-width: 820px;
 }
-
-.card .card-img .lowest-pic {
-  height: 297px;
-  width: 505px;
-}
-
-.row .card-content {
-  /*background: red;*/
-  z-index: 1000px;
-}
-
-/*.index {
-  max-width: 900px;
-}*/
 
 nav {
   /*background-color: black;*/
@@ -108,33 +144,10 @@ ul * {
 
 p {
   font-size: 12px;
-  /*padding-bottom: 0;*/
 }
-/*
-#big-picture {
-  /*width: 100%;*/
-/*  height: auto;
-  z-index: -1000px;
-}*/
-*/
-/*.about-cards {
-  border: 5px solid black;
-}*/
 
-/*img {
-  float: left;
-  width: 484px;
-  height: 265px;
-}*/
 
-/*img {
-  height: auto;
-  float: left;
-}*/
 
-.border {
-  border: 1px solid #64D1A2;
-}
 
 #image {
   width: auto;
@@ -142,39 +155,63 @@ p {
   padding: 0;
 
 }
-/*.flow-text {
-    display: inline-block;
-    max-width: 500px;
-    line-height: 1.75;
-    margin: 50px auto 50px auto;
-    margin-right: 75px;
-    margin-right: 15px;
-    margin-right: 70px;
-    font-size: 12px;
-}*/
-/*.card-content {
-  padding: 0;
-}*/
 
 .title {
   padding-top: 25px;
-  height: 250px;
-  margin-bottom: 150px;
+  height: 300px;
+  margin-bottom: 70px;
   z-index: 1000px;
   /*background-image: url("http://justjuice.org/wp-content/uploads/2014/11/breakfast-juicing.jpg") no-repeat;*/
   /*background-image: url("http://www.healthista.com/wp-content/uploads/2015/01/juice-fast-day-one-slider.jpg");*/
    /*background-color: transparent;*/
-  background-image: url("http://img.aws.livestrongcdn.com/ls-1200x630/cme/cme_public_images/www_livestrong_com/photos.demandstudios.com/getty/article/152/236/482162444_XS.jpg");
+  background-image: url("http://thecultureist.com/wp-content/uploads/2013/06/green-juice.jpg");
+  /*background-repeat: no-repeat;*/
+  background-size: 100%;
+  color: white;
+  /*width: 1200px;*/
+  background-color: #000;
+  /*background-image: url(texture.png), url(banner.png);*/
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+.title > h1 {
+  /*font-family: Raleway;*/
+  font-weight: 100;
+  text-shadow: 0px 0px 2px #000;
+  color: white;
+  font-family: sans-serif;
+  /*font-weight: bold;*/
+  /*font-family: 'Proxima N W01 Smbd';*/
 }
 
 #juicy {
   z-index: 5000px;
   color: white;
-  /*-webkit-font-smoothing: antialiased !important;*/
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 #about-cards {
-  margin: 70px;
+  min-width: 500px;
+  max-width: 1000px;
 }
 
+.slogan {
+  color: white;
+  text-shadow: 0px 0px 1px #000;
+  font-weight: 100;
+}
+
+#login-prompt {
+  font-family: sans-serif;
+
+}
+
+.span-steps {
+  font-family: sans-serif;
+
+}
+
+.span-text {
+  font-size: 12px;
+}
