@@ -28,11 +28,11 @@
       })
       .state("cart", {
         url: "/cart",
-        templateUrl: '/js/app/cart.html'
+        templateUrl: '/js/app/templates/cart.html'
       })
       .state("order", {
         url: "/order",
-        templateUrl: '/js/app/order.html'
+        templateUrl: '/js/app/templates/order.html'
       });
 
     $urlRouterProvider.otherwise("/");

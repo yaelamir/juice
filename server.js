@@ -44,10 +44,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Parse and debug requests.
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(debugReq);
 
 // Validate content-type.
-app.use(validateContentType);
+// app.use(validateContentType);
 
 // Our routes.
 app.use('/api', routes);
