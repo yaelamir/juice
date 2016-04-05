@@ -28,11 +28,11 @@
       })
       .state("cart", {
         url:         "/cart",
-        templateUrl: "/js/app/templates/cart.html"
+        templateUrl: "/js/app/cart/cart.html"
       })
       .state("order", {
         url:          "/order",
-        templateUrl:  "/js/app/templates/order.html",
+        templateUrl:  "/js/app/order/order.html",
         controller:   "OrderController",
         controllerAs: "vm"
       });

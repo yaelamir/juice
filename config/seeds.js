@@ -499,15 +499,15 @@ var ingredients = [
 ];
 
 
-  Ingredient
-    .remove({}, function(err) {
-    if (err) console.log(err);
-   Ingredient.create(ingredients, function(err, users) {
-     if (err) {
-       console.log(err);
-     } else {
-       console.log("Database seeded with " + ingredients.length  + " ingredients.");
-       mongoose.disconnect();
-     }
-   });
-  });
+Ingredient
+  .remove({}, function(err) {
+  if (err) console.log(err);
+ Ingredient.create(ingredients, function(err, users) {
+   if (err) {
+     console.log(err);
+   } else {
+     console.log("Database seeded with " + ingredients.length  + " ingredients.");
+     mongoose.disconnect();
+   }
+ });
+});

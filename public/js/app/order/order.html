@@ -75,25 +75,33 @@
   <div class="card-content">
     <h6>step three: choose pick up or delivery time</h6>
   </div>
-  <div class="row">
-    <div id="delivery-buttons" class="col s4 m4 l4">
-      <a class="waves-effect waves-light btn">Pick Up</a>
-      <a class="waves-effect waves-light btn">Delivery</a>
+  <div class="row" id="step3">
+    <div class="col s4 m4 l4">
+      <ul>
+        <li><a class="waves-effect waves-light btn delivery-buttons">Pick Up</a></li>
+        <li><a class="waves-effect waves-light btn delivery-buttons">Delivery</a></li>
+      </ul>
     </div>
-   <!--  <div ng-controller="OrderController">
+    <div ng-controller="OrderController" id="time-selector">
       <form name="myForm">
-          <label for="singleSelect"> Single select: </label><br>
-          <select ng-model="vm.timeSelect" ng-options="" name="singleSelect">
-            <option value="option-1">Option 1</option>
-            <option value="option-2">Option 2</option>
-          </select>
-      </form> -->
-
+        <div class="col s5 m5 l5">
+          <label for="exampleInput">Select a time:</label>
+          <input type="time" id="exampleInput" name="input" ng-model="vm.timeSelect" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+          <div role="alert">
+            <span class="error" ng-show="myForm.input.$error.required">Field Required</span>
+            <span class="error" ng-show="myForm.input.$error.time">Not a valid time</span>
+          </div>
+        </div>
+      </form>
+        <div class="col s5 m5 l5" id="date">
+        <form name="myForm" class="right">
+          <label for="datepicker">Select a Date:</label>
+          <input type="date" class="datepicker">
+        </form>
+      </div>
     </div>
   </div>
-    </div>
-    <div class="col s3 m3 l3">
-    </div>
+</div>
     <div class="col s3 m3 l3">
     </div>
   </div>
