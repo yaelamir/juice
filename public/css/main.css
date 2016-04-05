@@ -266,3 +266,6 @@ span {
   padding-right: 50px;
 }
 
+hr {
+  max-width: 120px;
+}

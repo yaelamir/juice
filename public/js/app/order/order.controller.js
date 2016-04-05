@@ -8,7 +8,7 @@
   OrderController.$inject = ["$log", "$scope", "orderService"];
 
   function OrderController($log, $scope, orderService) {
-    $log.debug("order controller loaded");
+    $log.info("order controller loaded");
     $('select').material_select();
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
@@ -19,8 +19,25 @@
     var vm = this;
 
     vm.data = orderService;
+    vm.addIng = addIng;
+    // vm.ingredients = [];
+    vm.newJuice = newJuice;
+
+    var newJuice = {
+      ing: [],
+      size: "",
+      delivery: "",
+      time: "",
+      date: ""
+    }
+
+    function addIng(ing) {
+      $log.info("ingredient added to juice");
+      newJuice.ing.push(ing)
+      $log.info(" juice", newJuice);
 
 
+    };
 
   };
 })();
