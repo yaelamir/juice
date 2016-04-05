@@ -17,8 +17,8 @@
       <h6>fruits</h6>
       <hr>
       <div ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'fruit'}">
-        <ul class="fruit" ng-click="myStyle={color:'#1de9b6'}">
-          <li ng-style="myStyle" ng-click="vm.addIng(ingredient.name)">{{ ingredient.name }}</li>
+        <ul class="fruit" ng-model="vm.data.ingredients[$index].myStyle" ng-click="ingredient.myStyle = !ingredient.myStyle">
+          <li ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient.name); ">{{ ingredient.name }}</li>
         </ul>
       </div>
     </div>
@@ -26,8 +26,8 @@
       <h6>vegetables</h6>
       <hr>
       <div ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}">
-        <ul class="fruit" ng-click="myStyle={color:'#1de9b6'}">
-          <li ng-style="myStyle" ng-click="vm.addIng(ingredient.name)">{{ ingredient.name }}</li>
+        <ul class="fruit" ng-model="vm.data.ingredients[$index].myStyle" ng-click="ingredient.myStyle = !ingredient.myStyle">
+          <li ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient.name); ">{{ ingredient.name }}</li>
         </ul>
       </div>
     </div>
@@ -35,8 +35,8 @@
       <h6>sweet</h6>
       <hr>
       <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}">
-        <ul class="fruit" ng-click="myStyle={color:'#1de9b6'}">
-          <li ng-style="myStyle" ng-click="vm.addIng(ingredient.name)">{{ ingredient.name }}</li>
+        <ul class="fruit" ng-model="vm.data.ingredients[$index].myStyle" ng-click="ingredient.myStyle = !ingredient.myStyle">
+          <li ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient.name); ">{{ ingredient.name }}</li>
         </ul>
       </div>
     </div>
@@ -44,8 +44,8 @@
       <h6>extras</h6>
       <hr>
       <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'extras'}">
-        <ul class="fruit" ng-click="myStyle={color:'#1de9b6'}">
-          <li ng-style="myStyle" ng-click="vm.addIng(ingredient.name)">{{ ingredient.name }}</li>
+        <ul class="fruit" ng-model="vm.data.ingredients[$index].myStyle" ng-click="ingredient.myStyle = !ingredient.myStyle">
+          <li ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient.name); ">{{ ingredient.name }}</li>
         </ul>
       </div>
     </div>

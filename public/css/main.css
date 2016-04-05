@@ -269,3 +269,15 @@ span {
 hr {
   max-width: 120px;
 }
+
+.myStyle {
+  color: #1de9b6;
+}
+
+ul {
+  cursor: pointer;
+}
+
+form, input {
+    cursor: pointer;
+}

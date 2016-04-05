@@ -10,6 +10,22 @@
   function orderService($log) {
     $log.debug("order service loaded");
 
+      // return {
+      //   juiceSize: [
+      //     { size: "12 oz",
+      //       price: "$6"
+      //     },
+      //     { size: "16 oz",
+      //       price: "$8"
+      //     },
+      //     { size: "20 oz",
+      //       price: "$12"
+      //     },
+      //     { size: "32 oz",
+      //       price: "$18"
+      //     }
+      //   ]
+      // };
 
       var nutrientUnit = {
         "energy":    "cals",
