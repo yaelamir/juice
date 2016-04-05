@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 
 var nutrientSchema = new mongoose.Schema({
   name:   { type: String },
+  kind:   { type: String },
   amount: { type: Number },
   unit:   { type: String }
 });

@@ -27,12 +27,14 @@
         authorized:   true
       })
       .state("cart", {
-        url: "/cart",
-        templateUrl: '/js/app/templates/cart.html'
+        url:         "/cart",
+        templateUrl: "/js/app/templates/cart.html"
       })
       .state("order", {
-        url: "/order",
-        templateUrl: '/js/app/templates/order.html'
+        url:          "/order",
+        templateUrl:  "/js/app/templates/order.html",
+        controller:   "OrderController",
+        controllerAs: "vm"
       });
 
     $urlRouterProvider.otherwise("/");

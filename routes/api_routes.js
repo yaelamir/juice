@@ -18,5 +18,9 @@ router.post('/users/me/token', token.authenticate, token.refresh);
 
 router.post('/ingredients', ingredientsCtrl.create);
 router.get('/ingredients',  ingredientsCtrl.index);
+router.get('/ingredients/:id',  ingredientsCtrl.show);
+router.put('/ingredients/:id',  ingredientsCtrl.update);
+router.delete('/ingredients/:id',  ingredientsCtrl.destroy);
+
 
 module.exports = router;

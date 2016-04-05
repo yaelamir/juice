@@ -7,82 +7,90 @@
 </div>
 </div>
 <h4>ORDER</h4>
-<!-- <div class="row">
-  <div class="col s12 m4">
-    <div class="card-panel hoverable">
-      <span class="span-steps center card-title activator grey-text text-darken-4">STEP ONE</span>
-      <br>
-      <span class="span-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-      </span>
-    </div>
-  </div>
-  <div class="col s12 m4">
-    <div class="card-panel hoverable">
-      <span class="span-steps center card-title activator grey-text text-darken-4">STEP TWO</span>
-      <br>
-      <span class="span-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-      </span>
-    </div>
-  </div><div class="col s12 m4">
-    <div class="card-panel hoverable">
-      <span class="span-steps center card-title activator grey-text text-darken-4">STEP THREE</span>
-      <br>
-      <span class="span-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-      </span>
-    </div>
-  </div> -->
 
-<div class="card">
+<div class="card" id="ing-card" ng-controller="OrderController as vm">
   <div class="card-content">
     <h6>step one: choose your vegetables</h6>
   </div>
   <div class="row">
     <div class="col s3 m3 l3">
       <h6>fruits</h6>
+      <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'fruit'}">
+        <ul class="fruit">
+          <li>{{ ingredient.name }}</li>
+        </ul>
+      </div>
     </div>
-    <div class="col s3 m3 l3">
+    <div  class="col s3 m3 l3">
       <h6>vegetables</h6>
+      <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}">
+        <ul class="fruit">
+          <li>{{ ingredient.name }}</li>
+        </ul>
+      </div>
     </div>
     <div class="col s3 m3 l3">
-      <h6>sweets</h6>
+      <h6>sweet</h6>
+      <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}">
+        <ul class="fruit">
+          <li>{{ ingredient.name }}</li>
+        </ul>
+      </div>
     </div>
-    <div class="col s3 m3 l3">
+     <div class="col s3 m3 l3">
       <h6>extras</h6>
+      <div ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'extras'}">
+        <ul class="fruit">
+          <li>{{ ingredient.name }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-<div class="card">
+
+<div class="card" id="size-card">
   <div class="card-content">
     <h6>step two: choose your size</h6>
   </div>
   <div class="row">
     <div class="col s3 m3 l3">
       <h6>12 oz</h6>
+      <h6>$6</h6>
     </div>
     <div class="col s3 m3 l3">
       <h6>16 oz</h6>
+      <h6>$8</h6>
     </div>
     <div class="col s3 m3 l3">
       <h6>20 oz</h6>
+      <h6>$12</h6>
     </div>
     <div class="col s3 m3 l3">
       <h6>32 oz</h6>
+      <h6>$18</h6>
     </div>
   </div>
 </div>
-<div class="card">
+<div class="card" id="size-card">
   <div class="card-content">
     <h6>step three: choose pick up or delivery time</h6>
   </div>
   <div class="row">
-    <div class="col s3 m3 l3">
+    <div id="delivery-buttons" class="col s4 m4 l4">
       <a class="waves-effect waves-light btn">Pick Up</a>
       <a class="waves-effect waves-light btn">Delivery</a>
     </div>
-    <div class="col s3 m3 l3">
+   <!--  <div ng-controller="OrderController">
+      <form name="myForm">
+          <label for="singleSelect"> Single select: </label><br>
+          <select ng-model="vm.timeSelect" ng-options="" name="singleSelect">
+            <option value="option-1">Option 1</option>
+            <option value="option-2">Option 2</option>
+          </select>
+      </form> -->
+
+    </div>
+  </div>
     </div>
     <div class="col s3 m3 l3">
     </div>
@@ -90,5 +98,6 @@
     </div>
   </div>
 </div>
+<a class="waves-effect waves-light btn">Add Juice</a>
 
 

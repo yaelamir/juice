@@ -146,9 +146,6 @@ p {
   font-size: 12px;
 }
 
-
-
-
 #image {
   width: auto;
   height: 100%;
@@ -215,3 +212,31 @@ p {
 .span-text {
   font-size: 12px;
 }
+
+.fruit {
+  display: block;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+#ing-card {
+  width: 1000px;
+  display: inline-block;
+}
+
+#size-card {
+  width: 1000px;
+  display: inline-block;
+}
+
+#delivery-buttons {
+  display: block;
+}
+
+
+
+
+
+
+

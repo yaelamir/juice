@@ -1,0 +1,21 @@
+{
+  "name": "starter",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Yael Amir <yaelamir1@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yaelamir/juice",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-materialize": "^0.1.3"
+  }
+}

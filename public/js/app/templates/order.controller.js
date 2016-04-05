@@ -5,9 +5,18 @@
     .module("app")
     .controller("OrderController", OrderController);
 
-  OrderController.$inject = ["$log", "orderService"];
+  OrderController.$inject = ["$log", "$scope", "orderService"];
 
-  function OrderController($log, orderService) {
+  function OrderController($log, $scope, orderService) {
     $log.debug("order controller loaded");
-  }
+    var vm = this;
+
+    vm.data = orderService;
+
+    vm.timeSelect = {
+      singleSelect: null,
+      multipleSelect: []
+    }
+
+  };
 })();

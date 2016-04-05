@@ -3,8 +3,11 @@ var Ingredient = require("../models/ingredient"),
 
 module.exports = {
   index: index,
-  create: create
-}
+  create: create,
+  show: show,
+  update: update,
+  destroy: destroy
+};
 
 function index(req, res) {
   Ingredient.find({}, function(err, ings) {
@@ -39,4 +42,47 @@ function create(req, res) {
       res.json({msg: "ingredient created", ingredient: ing})
     }
   })
+};
+
+function show(req, res) {
+  var id = parseInt(req.params.id);
+
+  var showIngredient = Ingredients.find({}, function(err, ings) {
+    return ings.id === id;
+  })
+
+  if (showIngredient) {
+    res.json(showIngredient);
+  } else {
+    res.json({err: "ingredient doesn't exist"})
+  }
+};
+
+function update(req, res) {
+  var updateIngredient = req.body;
+
+  var id = parseInt(req.params.id);
+
+  var ingredient = ingredients.find(function(ingredient) {
+    return ingredient.id === id;
+  });
 }
+
+function destroy(req, res) {
+  var id = parseInt(req.params.id);
+
+  var ingredient = ingredients.find(function(burger) {
+    return ingredient.id === id;
+  });
+
+  var ingredientId = ingredients.indexOf(ingredient);
+}
+
+
+
+
+
+
+
+
+
