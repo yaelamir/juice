@@ -25,7 +25,7 @@
     vm.addSize = addSize;
     vm.addDelivery = addDelivery;
     vm.addPickup = addPickup;
-    vm.addDate = addDate;
+    // vm.addDate = addDate;
     vm.testData = testData;
 
     var newJuice = {
@@ -39,25 +39,35 @@
 
     function addIng(ing) {
       $log.info("ingredient added to juice");
-      // var found = $.inArray(ing, newJuice.ing) > -1;
       var found = newJuice.ing.indexOf(ing.name);
       if (found === -1) {
         $log.info("item found: ", found);
         newJuice.ing.push(ing.name);
         $log.info("juice: ", newJuice.ing);
         ing.myStyle = !ing.myStyle
-
       } else {
         newJuice.ing.splice(found, 1);
         $log.info("item removed: ", found);
         $log.info("updated juice: ", newJuice.ing);
         ing.myStyle = !ing.myStyle
-
       }
     };
 
+
+    // function addSize(sz) {
+    //   if (newJuice.size === sz) {
+    //     sz.myStyle = !sz.myStyle;
+    //   } else {
+    //     newJuice.size = sz;
+    //     $log.info("size added to order: ", sz);
+    //     $log.info(newJuice);
+    //     sz.myStyle = !sz.myStyle;
+    //   }
+    // };
+
     function addSize(sz) {
       newJuice.size = sz;
+      // sz.myStyle = !sz.myStyle;
       $log.info("size added to order: ", sz);
       $log.info(newJuice);
     };
@@ -76,17 +86,23 @@
       $log.info(newJuice);
     };
 
-    function addDate() {
-      $log.info(newJuice.date);
-      $log.info(vm.date)
-      newJuice.date = new Date(vm.date);
-      $log.info(newJuice.date);
-    };
-
+    // function addDate() {
+    //   $log.info(newJuice.date);
+    //   $log.info(vm.date)
+    //   newJuice.date = new Date(vm.date);
+    //   $log.info(newJuice.date);
+    // };
 
     function testData() {
       $log.info("testing")
       $log.info(vm.newJuice.date)
+      var dt = $('[name="selDate"]').val();
+      var tm = $('[name="timeSelect"]').val();
+      $log.info("selDate: ", dt);
+      $log.info("selected Time: ", tm);
+      newJuice.date = dt;
+      newJuice.time = tm;
+      $log.info("juice order: ", newJuice);
     }
 
   };

@@ -24,14 +24,14 @@
       <h6>vegetables</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}"  ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
         </ul>
     </div>
     <div class="col s3 m3 l3">
       <h6>sweet</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}"  ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
         </ul>
     </div>
      <div class="col s3 m3 l3">
@@ -43,14 +43,14 @@
     </div>
   </div>
 </div>
-<!--  ng-model="vm.data.size[$index].myStyle" ng-class="{'myStyle': size.myStyle}"ng-click="size.myStyle = !size.myStyle"-->
+<!-- ng-class="{'myStyle': ingredient.myStyle}"  -->
 <div class="card" id="size-card">
   <div class="card-content">
     <h6>step two: choose your size</h6>
   </div>
   <div class="row" ng-model="newJuice">
     <div ng-click="vm.addSize(size.type);" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'small'}" class="card-content hoverable col s3 m3 l3">
-      <h6 ng-model="vm.data.size[$index].myStyle" ng-class="{'myStyle': size.myStyle}">{{size.type}}</h6>
+      <h6 ng-class="{'myStyle': size.size.myStyle}">{{size.type}}</h6>
       <hr>
       <h6>{{size.size}}</h6>
       <h6>{{size.price}}</h6>
@@ -82,25 +82,25 @@
   </div>
   <div class="row" id="step3">
     <div class="col s4 m4 l4">
-      <ul ng-model="newJuice">
-        <li ng-click="vm.addPickup();"><a class="waves-effect waves-light btn delivery-buttons">Pick Up</a></li>
-        <li ng-click="vm.addDelivery();"><a class="waves-effect waves-light btn delivery-buttons">Delivery</a></li>
+      <ul>
+        <li ng-click="vm.addPickup()"><a class="waves-effect waves-light btn delivery-buttons">Pick Up</a></li>
+        <li ng-click="vm.addDelivery()"><a class="waves-effect waves-light btn delivery-buttons">Delivery</a></li>
       </ul>
     </div>
     <div id="time-selector">
-      <form ng-submit="vm.testData();" name="myForm">
+      <form ng-submit="vm.testData()" name="myForm">
         <div class="col s5 m5 l5">
           <label for="exampleInput">Select a time:</label>
-          <input type="time" id="exampleInput" name="input" ng-model="vm.newJuice.timeSelect" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+          <input type="time" id="exampleInput" name="timeSelect" ng-model="vm.newJuice.timeSelect" placeholder="HH:mm:ss" min="07:00:00" max="21:00:00" required />
           <div role="alert">
             <span class="error" ng-show="myForm.input.$error.required">Field Required</span>
             <span class="error" ng-show="myForm.input.$error.time">Not a valid time</span>
           </div>
         </div>
         <div class="col s5 m5 l5" id="date">
-          <div name="dateForm" class="right">
+          <div class="right">
             <label for="datepicker">Select a Date:</label>
-            <input type="date" class="datepicker" ng-model="vm.date">
+            <input ng-required="true" ng-model="vm.selDate" type="date" class="datepicker" name="selDate" required />
           </div>
         </div>
         <button class="waves-effect waves-light btn" type="submit">Add</button>
@@ -111,5 +111,4 @@
 <div class="col s3 m3 l3">
   <a id="add-juice" class="waves-effect waves-light btn">Add Juice</a>
 </div>
-
 
