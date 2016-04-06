@@ -1,4 +1,4 @@
-/*Animate route change*/
+Animate route change*/
 
 [ui-view].ng-enter {
   transition: all 1s ease;
@@ -9,6 +9,8 @@
   opacity: 1;
 }
 
+
+/*?*/
 /*.my-form {
   transition:all linear 0.5s;
   background: transparent;
@@ -16,3 +18,18 @@
 .my-form.ng-invalid {
   background: red;
 }*/
+
+
+/*animate box on click*/
+/*.highlight {
+  transition:0.5s linear all;
+}
+.highlight.on-add {
+  background:white;
+}
+.highlight.on {
+  background:yellow;
+}
+.highlight.on-remove {
+  background:black;
+}

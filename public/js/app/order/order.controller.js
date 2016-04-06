@@ -18,75 +18,67 @@
 
     var vm = this;
 
-    vm.data = orderService;
+    vm.data   = orderService;
     vm.addIng = addIng;
-    vm.newJuice = newJuice;
-    vm.myStyle = false;
-    vm.addSize = addSize;
-    vm.addDelivery = addDelivery;
-    vm.addPickup = addPickup;
-    // vm.addDate = addDate;
-    vm.testData = testData;
-    vm.submitOrder = submitOrder;
-    vm.yourJuice = false;
-
-    var newJuice = {
-      ing: [],
-      size: "",
+    vm.newJuice = {
+      ing:      [],
+      size:     "",
       delivery: "",
-      date: new Date(),
-      time: "",
-    }
-
+      date:     new Date(),
+      time:     ""
+    };
+    vm.selectJuiceSize = selectJuiceSize;
+    vm.addDelivery     = addDelivery;
+    vm.addPickup       = addPickup;
+    vm.testData        = testData;
+    vm.submitOrder     = submitOrder;
+    vm.yourJuice       = false;
 
     function addIng(ing) {
       $log.info("ingredient added to juice");
-      var found = newJuice.ing.indexOf(ing.name);
+      var found = vm.newJuice.ing.indexOf(ing.name);
       if (found === -1) {
         $log.info("item found: ", found);
-        newJuice.ing.push(ing.name);
-        $log.info("juice: ", newJuice.ing);
-        ing.myStyle = !ing.myStyle;
+        vm.newJuice.ing.push(ing.name);
+        $log.info("juice: ", vm.newJuice.ing);
+        ing.textHighlight = !ing.textHighlight;
       } else {
-        newJuice.ing.splice(found, 1);
+        vm.newJuice.ing.splice(found, 1);
         $log.info("item removed: ", found);
-        $log.info("updated juice: ", newJuice.ing);
-        ing.myStyle = !ing.myStyle;
+        $log.info("updated juice: ", vm.newJuice.ing);
+        ing.textHighlight = !ing.textHighlight;
       }
     };
 
-
     // function addSize(sz) {
     //   if (newJuice.size === sz) {
-    //     sz.myStyle = !sz.myStyle;
+    //     sz.textHighlight = !sz.textHighlight;
     //   } else {
     //     newJuice.size = sz;
     //     $log.info("size added to order: ", sz);
     //     $log.info(newJuice);
-    //     sz.myStyle = !sz.myStyle;
+    //     sz.textHighlight = !sz.textHighlight;
     //   }
     // };
 
-    function addSize(sz) {
-      newJuice.size = sz;
-      // sz.myStyle = !sz.myStyle;
-      $log.info("size added to order: ", sz);
-      $log.info(newJuice);
-      sz.myStyle = !sz.myStyle;
+    function selectJuiceSize(juice) {
+      vm.newJuice.size = juice.size;
+      $log.info("Order size selected: ", juice.size);
+      $log.info(vm.newJuice);
     };
 
     function addDelivery() {
-      $log.info(newJuice);
-      newJuice.delivery = "delivery";
-      $log.info(newJuice.delivery);
-      $log.info(newJuice);
+      $log.info(vm.newJuice);
+      vm.newJuice.delivery = "delivery";
+      $log.info(vm.newJuice.delivery);
+      $log.info(vm.newJuice);
     };
 
     function addPickup() {
-      $log.info(newJuice);
-      newJuice.delivery = "pick up";
-      $log.info(newJuice.delivery);
-      $log.info(newJuice);
+      $log.info(vm.newJuice);
+      vm.newJuice.delivery = "pick up";
+      $log.info(vm.newJuice.delivery);
+      $log.info(vm.newJuice);
     };
 
     // function addDate() {
@@ -104,18 +96,22 @@
       $log.info("selDate: ", dt);
       $log.info("selected Time: ", tm);
       if (dt) {
-        newJuice.date = dt;
-        newJuice.time = tm;
+        vm.newJuice.date = dt;
+        vm.newJuice.time = tm;
       } else {
         $log.info("Must select a date");
         $window.alert("Must select a date");
       }
-      $log.info("juice order: ", newJuice);
-    }
+      $log.info("juice order: ", vm.newJuice);
+    };
 
     function submitOrder() {
-      vm.yourJuice = true;
-    }
+      if (vm.newJuice.ing.length < 1 || vm.newJuice.size === "" || vm.newJuice.delivery === "") {
+        $window.alert("Missing Fields")
+      } else {
+        vm.yourJuice = true;
+      }
+    };
 
 
   };

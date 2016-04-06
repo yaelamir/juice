@@ -27,26 +27,26 @@
       //   ]
       // };
 
-      var nutrientUnit = {
-        "energy":    "cals",
-        "fat":       "g",
-        "carbs":     "g",
-        "sugar":     "g",
-        "protein":   "g",
-        "potassium": "mg",
-        "calcium":   "mg",
-        "iron":      "mg",
-        "fiber":     "g",
-        "zinc":      "g",
-        "vitamin a": "mg",
-        "vitamin b": "mg",
-        "vitamin c": "mg",
-        "vitamin d": "mg",
-        "vitamin e": "mg",
-        "vitamin k": "mcg"
-      };
+    var nutrientUnit = {
+      "energy":    "cals",
+      "fat":       "g",
+      "carbs":     "g",
+      "sugar":     "g",
+      "protein":   "g",
+      "potassium": "mg",
+      "calcium":   "mg",
+      "iron":      "mg",
+      "fiber":     "g",
+      "zinc":      "g",
+      "vitamin a": "mg",
+      "vitamin b": "mg",
+      "vitamin c": "mg",
+      "vitamin d": "mg",
+      "vitamin e": "mg",
+      "vitamin k": "mcg"
+    };
 
-      return {
+    return {
       ingredients: [
         { name: "apple",
           type: "fruit",
@@ -530,7 +530,7 @@
           ]
         }
       ],
-      juice: [
+      juices: [
         { type: "small",
           size: "12 oz",
           price: "$6"

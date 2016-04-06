@@ -17,61 +17,53 @@
       <h6>fruits</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'fruit'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'fruit'}"
+              class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+              ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
     <div  class="col s3 m3 l3">
       <h6>vegetables</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}"
+          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
     <div class="col s3 m3 l3">
       <h6>sweet</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}"
+          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
      <div class="col s3 m3 l3">
       <h6>extras</h6>
       <hr>
         <ul>
-          <li ng-model="newJuice" ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'extras'}" class="fruit hoverable" ng-class="{'myStyle': ingredient.myStyle}" ng-click="vm.addIng(ingredient);">{{ ingredient.name }}</li>
+          <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'extras'}"
+          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
   </div>
 </div>
-<!-- ng-class="{'myStyle': ingredient.myStyle}"  -->
 <div class="card" id="size-card">
   <div class="card-content">
     <h6>step two: choose your size</h6>
   </div>
-  <div class="row" ng-model="newJuice">
-    <div ng-click="vm.addSize(size.type)" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'small'}" class="card-content hoverable col s3 m3 l3">
-      <h6 ng-class="{'myStyle': size.size.myStyle}">{{size.type}}</h6>
+  <div class="row" id="juice-sizes">
+    <div ng-click="vm.selectJuiceSize(juice);"
+         ng-repeat="juice in vm.data.juices"
+         class="card-content hoverable col s3 m3 l3 touchable"
+         ng-class="{'text-highlight': vm.newJuice.size === juice.size}">
+      <h6>{{juice.type}}</h6>
       <hr>
-      <h6>{{size.size}}</h6>
-      <h6>{{size.price}}</h6>
-    </div>
-    <div ng-click="vm.addSize(size.type);" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'medium'}" class="card-content hoverable col s3 m3 l3">
-      <h6>{{size.type}}</h6>
-      <hr>
-      <h6>{{size.size}}</h6>
-      <h6>{{size.price}}</h6>
-    </div>
-    <div ng-click="vm.addSize(size.type);" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'large'}" class="card-content hoverable col s3 m3 l3">
-      <h6>{{size.type}}</h6>
-      <hr>
-      <h6>{{size.size}}</h6>
-      <h6>{{size.price}}</h6>
-    </div>
-    <div ng-click="vm.addSize(size.type);" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'extraLarge'}" class="card-content hoverable col s3 m3 l3">
-      <h6>{{size.type}}</h6>
-      <hr>
-      <h6>{{size.size}}</h6>
-      <h6>{{size.price}}</h6>
+      <h6>{{juice.size}}</h6>
+      <h6>{{juice.price}}</h6>
     </div>
   </div>
 </div>
@@ -91,7 +83,9 @@
       <form ng-submit="vm.testData()" name="myForm">
         <div class="col s5 m5 l5">
           <label for="exampleInput">Select a time:</label>
-          <input type="time" id="exampleInput" name="timeSelect" ng-model="vm.newJuice.timeSelect" placeholder="HH:mm:ss" min="07:00:00" max="21:00:00" required />
+          <input type="time" id="exampleInput" name="timeSelect"
+                 ng-model="vm.newJuice.timeSelect" placeholder="HH:mm:ss"
+                 min="07:00:00" max="21:00:00" required />
           <div role="alert">
             <span class="error" ng-show="myForm.input.$error.required">Field Required</span>
             <span class="error" ng-show="myForm.input.$error.time">Not a valid time</span>
@@ -100,11 +94,12 @@
         <div class="col s5 m5 l5" id="date">
           <div class="right">
             <label for="datepicker">Select a Date:</label>
-            <input ng-required="true" ng-model="vm.selDate" type="date" class="datepicker" name="selDate" required />
+            <input ng-required="true" ng-model="vm.selDate" type="date"
+                   class="datepicker" name="selDate" required />
             <span class="error" ng-show="myForm.input.$error.required">Fields Required</span>
           </div>
         </div>
-        <button class="right waves-effect waves-light btn" type="submit">Save</button>
+         <button class="right waves-effect waves-light btn" type="submit">Save</button>
       </form>
     </div>
   </div>
@@ -113,9 +108,9 @@
   <a id="add-juice" class="waves-effect waves-light btn" ng-click="vm.submitOrder()">Add Juice</a>
 </div>
 
-<div ng-show="vm.yourJuice">
+<div id="order-summary" ng-show="vm.yourJuice">
   <h5>Your Juice</h5>
-  <!-- <p>{{ vm.newJuice.ing }}</p> -->
+  <p>{{ vm.newJuice }}</p>
 </div>
 
 

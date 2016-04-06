@@ -50,6 +50,9 @@ body {
   letter-spacing: 1px;
 }
 
+/*navbar styling*/
+.nav-wrapper { overflow-y: hidden; }
+
 .nav-wrapper .navbar {
   color: #232425;
   font-family: sans-serif;
@@ -251,8 +254,9 @@ hr {
   max-width: 120px;
 }
 
-.myStyle {
-  color: #1de9b6;
+.text-highlight,
+.text-highlight * {
+  color: #1de9b6 !important;
 }
 
 ul {
@@ -277,4 +281,12 @@ nav .button-collapse {
 
 #add-juice {
   margin-bottom: 70px;
+}
+
+#order-summary {
+  margin-bottom: 70px;
+}
+
+.touchable {
+  cursor: pointer;
 }
