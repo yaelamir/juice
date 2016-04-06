@@ -529,6 +529,24 @@
             { "Vitamin K":   0.4 }
           ]
         }
+      ],
+      juice: [
+        { type: "small",
+          size: "12 oz",
+          price: "$6"
+        },
+        { type: "medium",
+          size: "16 oz",
+          price: "$8"
+        },
+        { type: "large",
+          size: "20 oz",
+          price: "$12"
+        },
+        { type: "extra large",
+          size: "32 oz",
+          price: "$18"
+        }
       ]
     }
   };

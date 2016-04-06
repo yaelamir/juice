@@ -29,6 +29,15 @@
             <li><a ng-class="active" ng-hide="vm.authService.isLoggedIn();" ui-sref="signin" class="navbar">Login</a></li>
             <li><a ng-class="active" ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn();" class="navbar">Logout</a></li>
           </ul>
+          <ul id="slide-out" class="right side-nav">
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="order" class="navbar">Order</a></li>
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="cart" class="navbar">Cart</a></li>
+            <li><a ng-class="active" ng-show="vm.authService.isLoggedIn();" ui-sref="profile" class="navbar">My Account</a></li>
+            <li><a ng-class="active" ui-sref="welcome" class="navbar">About</a></li>
+            <li><a ng-class="active" ng-hide="vm.authService.isLoggedIn();" ui-sref="signin" class="navbar">Login</a></li>
+            <li><a ng-class="active" ng-click="vm.logOut();" ng-show="vm.authService.isLoggedIn();" class="navbar">Logout</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse">MENU</a>
         </div>
       </nav>
     </header>

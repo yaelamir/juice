@@ -8,6 +8,12 @@
   NavbarController.$inject = ["$log", "authService", "$state"];
 
   function NavbarController($log, authService, $state) {
+    $('.button-collapse').sideNav({
+         edge: 'right', // Choose the horizontal origin
+         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+       }
+     );
+
     var vm = this;
 
     vm.authService = authService;

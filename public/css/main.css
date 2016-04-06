@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a {
+  cursor: pointer;
+}
+
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -16,28 +20,20 @@ html {
   min-height: 100%;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-      /*font-family: 'Futura Book,Arial,serif';*/
-      word-wrap: break-word;
-      -moz-hyphens: auto;
-      -webkit-hyphens: auto;
-      -o-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto;
-      color: #232425;
-      /*font-family: 'Futura Book,Arial,serif';*/
-      /*font-family: 'Proxima N W01 Reg';*/
-      /*font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;*/
-      /*font-family: Futura Book,Arial,serif;*/
-      font-family: sans-serif;
-      text-transform: uppercase;
-      font-weight: 100;
-      letter-spacing: 3px;
-      /*text-shadow: 0px 0px 1px #000;*/
-      /*color: white;*/
-      z-index: 1000;
-  }
+  word-wrap: break-word;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -o-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #232425; /*black*/
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  z-index: 1000;
+}
 
 body {
   word-wrap: break-word;
@@ -48,16 +44,10 @@ body {
   hyphens: auto;
   color: #232425;
   font-family: 'Proxima N W01 Smbd';
-  /*text-transform: uppercase;*/
   font-weight: normal;
-  background-color: #fff;
-
-/*font-family: 'Futura Book,Arial,serif';*/
-/*font-family: 'Proxima N W01 Smbd';*/
-/*font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;*/
-/*font-family: 'Proxima N W01 Reg';*/
-font-size: 18px;
-letter-spacing: 1px;
+  background-color: #fff; /*white*/
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .nav-wrapper .navbar {
@@ -69,23 +59,17 @@ letter-spacing: 1px;
   background-color: #fff;
 }
 
-a {
-  cursor: pointer;
-}
-
 .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  /*margin: 0 auto -50px;  the bottom margin is the negative value of the footer's height */
 }
 
-.container {
+/*.container {
   margin-right: auto;
   margin-left: auto;
   max-width: 950px;
-}
-
+}*/
 
 main {
   text-align: center;
@@ -95,25 +79,21 @@ header {
   text-transform: uppercase;
 }
 
-#juicy-logo {
-  padding-left: 15px;
-  font-family: sans-serif;
-  font-weight: 200;
-}
-
 form {
   text-align: left;
   max-width: 600px;
   margin: 0 auto;
 }
 
+#juicy-logo {
+  padding-left: 15px;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+
 #exampleInputEmail1.red-border {
   border: 2px solid red;
 }
-
-/*.cards-image {
-  height: 175px;
-}*/
 
 .card .thumbnail .card-img {
   min-height: 175px;
@@ -124,7 +104,8 @@ form {
   display: inline-block;
   margin: 30px;
   min-height: 175px;
-  max-width: 800px;
+  font-weight: 100;
+  font-size: 10px;
 }
 
 .lower-panels {
@@ -133,9 +114,7 @@ form {
 }
 
 nav {
-  /*background-color: black;*/
-  /*background-color: #64D1A2;*/
-  background-color: white;
+  background-color: #fff;
 }
 
 ul * {
@@ -160,37 +139,31 @@ p {
   z-index: 1000px;
   /*background-image: url("http://justjuice.org/wp-content/uploads/2014/11/breakfast-juicing.jpg") no-repeat;*/
   /*background-image: url("http://www.healthista.com/wp-content/uploads/2015/01/juice-fast-day-one-slider.jpg");*/
-   /*background-color: transparent;*/
   background-image: url("http://thecultureist.com/wp-content/uploads/2013/06/green-juice.jpg");
-  /*background-repeat: no-repeat;*/
   background-size: 100%;
   color: white;
-  /*width: 1200px;*/
   background-color: #000;
-  /*background-image: url(texture.png), url(banner.png);*/
   background-position: center center;
   background-repeat: no-repeat;
-
 }
 
 .title > h1 {
-  /*font-family: Raleway;*/
   font-weight: 100;
   text-shadow: 0px 0px 2px #000;
   color: white;
   font-family: sans-serif;
-  /*font-weight: bold;*/
-  /*font-family: 'Proxima N W01 Smbd';*/
 }
 
 #juicy {
   z-index: 5000px;
   color: white;
+  width: 100%;
 }
 
 #about-cards {
   min-width: 500px;
   max-width: 1000px;
+
 }
 
 .slogan {
@@ -218,15 +191,18 @@ p {
   font-family: sans-serif;
   font-size: 12px;
   font-weight: 100;
+  line-height: 30px;
 }
 
 #ing-card {
-  width: 1000px;
+  max-width: 1000px;
+  min-width: 1000px;
   display: inline-block;
 }
 
 #size-card {
-  width: 1000px;
+  min-width: 1000px;
+  max-width: 1000px;
   display: inline-block;
   max-height: 250px;
   padding-bottom: 30px;
@@ -246,6 +222,9 @@ span {
   font-size: 10px;
 }
 
+* {
+    font-family: sans-serif;
+}
 /*.forms {
   margin: 20px;
 }*/
@@ -255,7 +234,8 @@ span {
 }*/
 
 #time-selector {
-  margin-top: 30px;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 #step3 {
@@ -280,4 +260,20 @@ ul {
 
 form, input {
     cursor: pointer;
+}
+
+.button-collapse {
+  color: #232425;
+  padding-right: 0;
+}
+
+nav .button-collapse {
+  float: right;
+  font-family: sans-serif;
+  font-weight: 100;
+  padding-right: 15px;
+}
+
+#add-juice {
+  margin-bottom: 70px;
 }

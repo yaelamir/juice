@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var orderSchema = new mongoose.Schema({
   deliveryOrPickup: { type: String, required: false },
   completedOrder:  { type: String, required: true },
+  date: { type: String, required: true },
   time: { type: Number, require: true },
   user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   juices: [juiceSchema]
