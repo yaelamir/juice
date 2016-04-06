@@ -51,7 +51,9 @@ body {
 }
 
 /*navbar styling*/
-.nav-wrapper { overflow-y: hidden; }
+@media only screen and (min-width: 992px) {
+  .nav-wrapper { overflow-y: hidden; }
+}
 
 .nav-wrapper .navbar {
   color: #232425;
