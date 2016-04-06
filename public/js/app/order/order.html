@@ -49,7 +49,7 @@
     <h6>step two: choose your size</h6>
   </div>
   <div class="row" ng-model="newJuice">
-    <div ng-click="vm.addSize(size.type);" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'small'}" class="card-content hoverable col s3 m3 l3">
+    <div ng-click="vm.addSize(size.type)" id="juice-sizes" ng-repeat="size in vm.data.juice | filter: {type: 'small'}" class="card-content hoverable col s3 m3 l3">
       <h6 ng-class="{'myStyle': size.size.myStyle}">{{size.type}}</h6>
       <hr>
       <h6>{{size.size}}</h6>
@@ -83,8 +83,8 @@
   <div class="row" id="step3">
     <div class="col s4 m4 l4">
       <ul>
-        <li ng-click="vm.addPickup()"><a class="waves-effect waves-light btn delivery-buttons">Pick Up</a></li>
-        <li ng-click="vm.addDelivery()"><a class="waves-effect waves-light btn delivery-buttons">Delivery</a></li>
+        <li ng-click="vm.addPickup()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Pick Up</a></li>
+        <li ng-click="vm.addDelivery()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Delivery</a></li>
       </ul>
     </div>
     <div id="time-selector">
@@ -101,14 +101,23 @@
           <div class="right">
             <label for="datepicker">Select a Date:</label>
             <input ng-required="true" ng-model="vm.selDate" type="date" class="datepicker" name="selDate" required />
+            <span class="error" ng-show="myForm.input.$error.required">Fields Required</span>
           </div>
         </div>
-        <button class="waves-effect waves-light btn" type="submit">Add</button>
+        <button class="right waves-effect waves-light btn" type="submit">Save</button>
       </form>
     </div>
   </div>
 </div>
 <div class="col s3 m3 l3">
-  <a id="add-juice" class="waves-effect waves-light btn">Add Juice</a>
+  <a id="add-juice" class="waves-effect waves-light btn" ng-click="vm.submitOrder()">Add Juice</a>
 </div>
+
+<div ng-show="vm.yourJuice">
+  <h5>Your Juice</h5>
+  <!-- <p>{{ vm.newJuice.ing }}</p> -->
+</div>
+
+
+
 

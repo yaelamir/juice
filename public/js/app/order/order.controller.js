@@ -5,9 +5,9 @@
     .module("app")
     .controller("OrderController", OrderController);
 
-  OrderController.$inject = ["$log", "$scope", "orderService"];
+  OrderController.$inject = ["$log", "$scope", "orderService", "$window"];
 
-  function OrderController($log, $scope, orderService) {
+  function OrderController($log, $scope, orderService, $window) {
     $log.info("order controller loaded");
     $('select').material_select();
     $('.datepicker').pickadate({
@@ -27,6 +27,8 @@
     vm.addPickup = addPickup;
     // vm.addDate = addDate;
     vm.testData = testData;
+    vm.submitOrder = submitOrder;
+    vm.yourJuice = false;
 
     var newJuice = {
       ing: [],
@@ -44,12 +46,12 @@
         $log.info("item found: ", found);
         newJuice.ing.push(ing.name);
         $log.info("juice: ", newJuice.ing);
-        ing.myStyle = !ing.myStyle
+        ing.myStyle = !ing.myStyle;
       } else {
         newJuice.ing.splice(found, 1);
         $log.info("item removed: ", found);
         $log.info("updated juice: ", newJuice.ing);
-        ing.myStyle = !ing.myStyle
+        ing.myStyle = !ing.myStyle;
       }
     };
 
@@ -70,6 +72,7 @@
       // sz.myStyle = !sz.myStyle;
       $log.info("size added to order: ", sz);
       $log.info(newJuice);
+      sz.myStyle = !sz.myStyle;
     };
 
     function addDelivery() {
@@ -100,10 +103,20 @@
       var tm = $('[name="timeSelect"]').val();
       $log.info("selDate: ", dt);
       $log.info("selected Time: ", tm);
-      newJuice.date = dt;
-      newJuice.time = tm;
+      if (dt) {
+        newJuice.date = dt;
+        newJuice.time = tm;
+      } else {
+        $log.info("Must select a date");
+        $window.alert("Must select a date");
+      }
       $log.info("juice order: ", newJuice);
     }
+
+    function submitOrder() {
+      vm.yourJuice = true;
+    }
+
 
   };
 })();

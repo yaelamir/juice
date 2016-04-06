@@ -211,6 +211,7 @@ p {
 .delivery-buttons {
   width: 153px;
   margin: 15px;
+  font-weight: 100;
 }
 
 label {
