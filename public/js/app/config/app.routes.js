@@ -35,6 +35,12 @@
         templateUrl:  "/js/app/order/order.html",
         controller:   "OrderController",
         controllerAs: "vm"
+      })
+      .state("viewJuice", {
+        url:           "/viewJuice",
+        templateUrl:   "/js/app/order/viewJuice.html",
+        controller:    "ViewJuiceController",
+        controllerAs:  "vm"
       });
 
     $urlRouterProvider.otherwise("/");

@@ -154,6 +154,7 @@
           ]
         },
         { name: "grapefruit",
+          type: "fruit",
           nutrients: [
             { "Energy":       74 },
             { "Fat":         0.3 },
@@ -174,6 +175,7 @@
           ]
         },
         { name: "lemon",
+          type: "fruit",
           nutrients: [
             { "Energy":      24 },
             { "Fat":        0.2 },

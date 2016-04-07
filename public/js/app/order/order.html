@@ -10,7 +10,7 @@
 
 <div class="card" id="ing-card">
   <div class="card-content">
-    <h6>step one: choose your ingredient</h6>
+    <h6>step one: choose your ingredients</h6>
   </div>
   <div class="row">
     <div class="col s3 m3 l3">
@@ -18,7 +18,7 @@
       <hr>
         <ul>
           <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'fruit'}"
-              class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+              class="fruit hoverable" ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}"
               ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
@@ -27,7 +27,7 @@
       <hr>
         <ul>
           <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'vegetable'}"
-          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          class="fruit hoverable" ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}"
           ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
@@ -36,7 +36,7 @@
       <hr>
         <ul>
           <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'sweet'}"
-          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          class="fruit hoverable" ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}"
           ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
@@ -45,7 +45,7 @@
       <hr>
         <ul>
           <li ng-repeat="ingredient in vm.data.ingredients | filter: {type: 'extras'}"
-          class="fruit hoverable" ng-class="{'text-highlight': ingredient.textHighlight}"
+          class="fruit hoverable" ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}"
           ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
@@ -108,10 +108,6 @@
   <a id="add-juice" class="waves-effect waves-light btn" ng-click="vm.submitOrder()">Add Juice</a>
 </div>
 
-<div id="order-summary" ng-show="vm.yourJuice">
-  <h5>Your Juice</h5>
-  <p>{{ vm.newJuice }}</p>
-</div>
 
 
 

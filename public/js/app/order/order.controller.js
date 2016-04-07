@@ -5,9 +5,9 @@
     .module("app")
     .controller("OrderController", OrderController);
 
-  OrderController.$inject = ["$log", "$scope", "orderService", "$window"];
+  OrderController.$inject = ["$log", "$scope", "orderService", "$window", "currentJuiceService", "$state"];
 
-  function OrderController($log, $scope, orderService, $window) {
+  function OrderController($log, $scope, orderService, $window, currentJuiceService, $state) {
     $log.info("order controller loaded");
     $('select').material_select();
     $('.datepicker').pickadate({
@@ -18,15 +18,9 @@
 
     var vm = this;
 
-    vm.data   = orderService;
-    vm.addIng = addIng;
-    vm.newJuice = {
-      ing:      [],
-      size:     "",
-      delivery: "",
-      date:     new Date(),
-      time:     ""
-    };
+    vm.data            = orderService;
+    vm.addIng          = addIng;
+    vm.newJuice        = currentJuiceService;
     vm.selectJuiceSize = selectJuiceSize;
     vm.addDelivery     = addDelivery;
     vm.addPickup       = addPickup;
@@ -38,15 +32,9 @@
       $log.info("ingredient added to juice");
       var found = vm.newJuice.ing.indexOf(ing.name);
       if (found === -1) {
-        $log.info("item found: ", found);
         vm.newJuice.ing.push(ing.name);
-        $log.info("juice: ", vm.newJuice.ing);
-        ing.textHighlight = !ing.textHighlight;
       } else {
         vm.newJuice.ing.splice(found, 1);
-        $log.info("item removed: ", found);
-        $log.info("updated juice: ", vm.newJuice.ing);
-        ing.textHighlight = !ing.textHighlight;
       }
     };
 
@@ -106,11 +94,16 @@
     };
 
     function submitOrder() {
-      if (vm.newJuice.ing.length < 1 || vm.newJuice.size === "" || vm.newJuice.delivery === "") {
-        $window.alert("Missing Fields")
-      } else {
-        vm.yourJuice = true;
-      }
+      // if (vm.newJuice.ing.length < 1 || vm.newJuice.size === "" || vm.newJuice.delivery === "") {
+      //   $window.alert("Missing Fields")
+      // } else {
+      //   vm.yourJuice = true;
+      // }
+      $log.debug('SUBMITTING')
+      currentJuiceService.pushJuiceOnCart();
+      // $scope.$apply();
+      currentJuiceService.logCart();
+      $state.go('viewJuice');
     };
 
 
