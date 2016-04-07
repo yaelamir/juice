@@ -21,7 +21,7 @@
     function pushJuiceOnCart() {
       var ingredients = angular.copy(currentJuice.ing);
       var size = currentJuice.size;
-      cartService.juices.push({ing: ingredients, size: size});
+      cartService.juices = {ing: ingredients, size: size};
       clear();
     }
 

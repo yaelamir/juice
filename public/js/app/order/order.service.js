@@ -45,7 +45,8 @@
       "vitamin e": "mg",
       "vitamin k": "mcg"
     };
-
+// const masterKey = ["Energy", "Fat", "Carbs"]
+// ingredients.nutrients[masterKey.indexOf("Carbs")]
     return {
       ingredients: [
         { name: "apple",
