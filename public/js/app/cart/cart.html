@@ -23,6 +23,7 @@
   </tbody>
 </table>
 
+  </div>
   <div id="nut-card" ng-repeat="juice in vm.juicesNutritions track by $index">
     <div id="inside-nut-card" class="card">
       <h5>{{juice.title}}</h5>
@@ -77,7 +78,14 @@
   </div>
 </div>
 
-
+<div class="row" id="view-juice-buttons">
+  <div id="view-juice" class="col s3">
+    <a class="waves-effect waves-light btn">Update</a>
+  </div>
+  <div id="view-juice" class="col s3">
+    <a class="waves-effect waves-light btn" ng-click="vm.returnToOrder()">Checkout</a>
+  </div>
+</div>
 
 
 
