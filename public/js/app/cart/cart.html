@@ -7,8 +7,8 @@
   <div class="row" id="step3">
     <div class="col s4 m4 l4">
       <ul>
-        <li ng-click="vm.addPickup()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Pick Up</a></li>
-        <li ng-click="vm.addDelivery()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Delivery</a></li>
+        <li ng-class="{'text-highlight': vm.colorPickup()}" ng-click="vm.addPickup()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Pick Up</a></li>
+        <li ng-class="{'text-highlight': vm.colorDelivery()}" ng-click="vm.addDelivery()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Delivery</a></li>
       </ul>
     </div>
     <div id="time-selector">
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+<!-- //ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}" -->

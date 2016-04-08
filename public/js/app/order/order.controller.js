@@ -27,6 +27,8 @@
     vm.testData        = testData;
     vm.submitOrder     = submitOrder;
     vm.yourJuice       = false;
+    vm.colorDelivery    = colorDelivery;
+    vm.colorPickup     = colorPickup;
 
     function addIng(ing) {
       $log.info("ingredient added to juice");
@@ -45,21 +47,30 @@
     };
 
     function addDelivery() {
-      $log.info(vm.newJuice);
       vm.newJuice.delivery = "delivery";
       $log.info(vm.newJuice.delivery);
       $log.info(vm.newJuice);
     };
 
+    function colorDelivery() {
+      if (vm.newJuice.delivery === "delivery") {
+        return true;
+      }
+    };
+
+    function colorPickup() {
+      if (vm.newJuice.delivery === "pick up") {
+        return true;
+      }
+    };
+
     function addPickup() {
-      $log.info(vm.newJuice);
       vm.newJuice.delivery = "pick up";
       $log.info(vm.newJuice.delivery);
       $log.info(vm.newJuice);
     };
 
     function testData() {
-      $log.info("testing")
       $log.info(vm.newJuice.date)
       var dt = $('[name="selDate"]').val();
       var tm = $('[name="timeSelect"]').val();
