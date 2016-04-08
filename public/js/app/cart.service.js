@@ -18,7 +18,8 @@
     };
 
     return cart;
-    localStorage.setItem('cart', JSON.strigify(cart));
+
+    // localStorage.setItem('cart', JSON.strigify(cart));
 
     function logCart() {
       $log.debug(cart);
