@@ -36,4 +36,32 @@
     </div>
   </div>
 </div>
-<!-- //ng-class="{'text-highlight': vm.newJuice.hasIngredient(ingredient)}" -->
+
+<div ng-controller="ViewJuiceController as vm">
+  <div id="nut-card" ng-repeat="juice in vm.juicesNutritions track by $index">
+    <h1>Hello</h1>
+    <div id="inside-nut-card" class="card">
+      <h5>{{juice.title}}</h5>
+      <ul>
+        <li class="juice-names" ng-repeat="ing in juice.ingredients track by $index">
+          {{ing}} <span class="juice-names" ng-if="!$last"> | </span>
+        </li>
+      </ul>
+      <ul>
+        <li id="nut-list" ng-repeat="nut in juice.nutrients track by $index">
+          {{nut.name}} - <span id="nut-vals">{{nut.value | number:1}} {{nut.unit}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

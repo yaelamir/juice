@@ -87,6 +87,7 @@ body {
 
 nav {
   background-color: #fff;
+  margin-bottom: 70px;
 }
 
 ul * {
@@ -317,7 +318,7 @@ nav .button-collapse {
 }
 
 #nut-title {
-  margin-top: 70px;
+  margin-top: 90px !important;
 }
 
 #view-juice-buttons {
