@@ -38,17 +38,6 @@
       }
     };
 
-    // function addSize(sz) {
-    //   if (newJuice.size === sz) {
-    //     sz.textHighlight = !sz.textHighlight;
-    //   } else {
-    //     newJuice.size = sz;
-    //     $log.info("size added to order: ", sz);
-    //     $log.info(newJuice);
-    //     sz.textHighlight = !sz.textHighlight;
-    //   }
-    // };
-
     function selectJuiceSize(juice) {
       vm.newJuice.size = juice.size;
       $log.info("Order size selected: ", juice.size);

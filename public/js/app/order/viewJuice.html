@@ -1,13 +1,18 @@
 <h1>view juice</h1>
 <h2>Juice Nutrition</h2>
 
-<div>
-<button ng-click-"vm.calculateNutrients()">elements button</button>
-
- <button ng-click="vm.showNutrients()">button</button>
-{{ vm.showNutrients() }}
-
-<!-- {{ vm.data.ingredients[0] }} -->
+<div ng-repeat="juice in vm.juicesNutritions track by $index">
+  <h3>{{juice.title}}</h3>
+  <ul>
+    <li class="juice-names" ng-repeat="ing in juice.ingredients track by $index">
+      {{ing}} <span class="juice-names" ng-if="!$last"> | </span>
+    </li>
+  </ul>
+  <ul>
+    <li id="nut-list" ng-repeat="nut in juice.nutrients track by $index">
+      {{nut.name}} - {{nut.value | number:1}} {{nut.unit}}
+    </li>
+  </ul>
+  <hr>
 </div>
-
 

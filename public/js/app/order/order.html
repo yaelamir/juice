@@ -68,42 +68,6 @@
   </div>
 </div>
 
-<div class="card" id="size-card">
-  <div class="card-content">
-    <h6>step three: choose pick up or delivery time</h6>
-  </div>
-  <div class="row" id="step3">
-    <div class="col s4 m4 l4">
-      <ul>
-        <li ng-click="vm.addPickup()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Pick Up</a></li>
-        <li ng-click="vm.addDelivery()"><a class="hoverable waves-effect waves-light btn-default delivery-buttons">Delivery</a></li>
-      </ul>
-    </div>
-    <div id="time-selector">
-      <form ng-submit="vm.testData()" name="myForm">
-        <div class="col s5 m5 l5">
-          <label for="exampleInput">Select a time:</label>
-          <input type="time" id="exampleInput" name="timeSelect"
-                 ng-model="vm.newJuice.timeSelect" placeholder="HH:mm:ss"
-                 min="07:00:00" max="21:00:00" required />
-          <div role="alert">
-            <span class="error" ng-show="myForm.input.$error.required">Field Required</span>
-            <span class="error" ng-show="myForm.input.$error.time">Not a valid time</span>
-          </div>
-        </div>
-        <div class="col s5 m5 l5" id="date">
-          <div class="right">
-            <label for="datepicker">Select a Date:</label>
-            <input ng-required="true" ng-model="vm.selDate" type="date"
-                   class="datepicker" name="selDate" required />
-            <span class="error" ng-show="myForm.input.$error.required">Fields Required</span>
-          </div>
-        </div>
-         <button class="right waves-effect waves-light btn" type="submit">Save</button>
-      </form>
-    </div>
-  </div>
-</div>
 <div class="col s3 m3 l3">
   <a id="add-juice" class="waves-effect waves-light btn" ng-click="vm.submitOrder()">Add Juice</a>
 </div>
