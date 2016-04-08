@@ -28,7 +28,9 @@
       })
       .state("cart", {
         url:         "/cart",
-        templateUrl: "/js/app/cart/cart.html"
+        templateUrl: "/js/app/cart/cart.html",
+        controller:   "OrderController",
+        controllerAs: "vm"
       })
       .state("order", {
         url:          "/order",

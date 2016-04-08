@@ -58,13 +58,6 @@
       $log.info(vm.newJuice);
     };
 
-    // function addDate() {
-    //   $log.info(newJuice.date);
-    //   $log.info(vm.date)
-    //   newJuice.date = new Date(vm.date);
-    //   $log.info(newJuice.date);
-    // };
-
     function testData() {
       $log.info("testing")
       $log.info(vm.newJuice.date)
@@ -92,9 +85,7 @@
       currentJuiceService.pushJuiceOnCart();
       // $scope.$apply();
       currentJuiceService.logCart();
-      $state.go('viewJuice');
+      $state.go("viewJuice");
     };
-
-
   };
 })();

@@ -282,11 +282,65 @@ nav .button-collapse {
 
 .juice-names {
   display: inline-block;
-  font-weight: 100;
+  font-weight: 300 !important;
   font-size: 15px;
   padding: 2px;
 }
 
-#nut-list {
-
+#nut-card {
+  text-align: left;
+  font-weight: 100;
+  padding: 40px;
+  max-width: 400px;
+  min-width: 400px;
+  min-height: 600px;
+  max-height: 600px;
+  display: inline-block;
 }
+
+#nut-list {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#inside-nut-card {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#nut-vals {
+  font-weight: 200;
+  font-size: 14px;
+  text-align: right !important;
+}
+
+#nut-title {
+  margin-top: 70px;
+}
+
+#view-juice-buttons {
+  /*display: inline-block !important;*/
+  margin: 0 350px;
+  padding: 20px;
+  text-align: center;
+}
+
+#view-juice {
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

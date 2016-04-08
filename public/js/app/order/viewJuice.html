@@ -1,18 +1,28 @@
-<h1>view juice</h1>
-<h2>Juice Nutrition</h2>
-
-<div ng-repeat="juice in vm.juicesNutritions track by $index">
-  <h3>{{juice.title}}</h3>
-  <ul>
-    <li class="juice-names" ng-repeat="ing in juice.ingredients track by $index">
-      {{ing}} <span class="juice-names" ng-if="!$last"> | </span>
-    </li>
-  </ul>
-  <ul>
-    <li id="nut-list" ng-repeat="nut in juice.nutrients track by $index">
-      {{nut.name}} - {{nut.value | number:1}} {{nut.unit}}
-    </li>
-  </ul>
-  <hr>
+<h4 id="nut-title">Your Juice Nutrition</h4>
+<div id="nut-card" ng-repeat="juice in vm.juicesNutritions track by $index">
+  <div id="inside-nut-card" class="card">
+    <h5>{{juice.title}}</h5>
+    <ul>
+      <li class="juice-names" ng-repeat="ing in juice.ingredients track by $index">
+        {{ing}} <span class="juice-names" ng-if="!$last"> | </span>
+      </li>
+    </ul>
+    <ul>
+      <li id="nut-list" ng-repeat="nut in juice.nutrients track by $index">
+        {{nut.name}} - <span id="nut-vals">{{nut.value | number:1}} {{nut.unit}}</span>
+      </li>
+    </ul>
+  </div>
 </div>
 
+<!-- <div class="row">
+  <button ng-click="checkout()" id="checkout-button" class="waves-effect waves-light btn" type="submit">Checkout</button>
+</div> -->
+<div class="row" id="view-juice-buttons">
+  <div id="view-juice" class="col s3">
+    <a class="waves-effect waves-light btn" ng-click="vm.checkout()">Checkout</a>
+  </div>
+  <div id="view-juice" class="col s3">
+    <a class="waves-effect waves-light btn" ng-click="vm.returnToOrder()">Add New</a>
+  </div>
+</div>

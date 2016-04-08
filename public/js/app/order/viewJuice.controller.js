@@ -5,14 +5,16 @@
     .module("app")
     .controller("ViewJuiceController", ViewJuiceController);
 
-  ViewJuiceController.$inject = ["$log", "cartService", "orderService"];
+  ViewJuiceController.$inject = ["$log", "cartService", "orderService", "$state"];
 
-  function ViewJuiceController ($log, cartService, orderService) {
+  function ViewJuiceController ($log, cartService, orderService, $state) {
     var vm = this;
     $log.info("View Juice Controller Loaded!");
 
     vm.cart = cartService;
     vm.data = orderService;
+    vm.checkout = checkout;
+    vm.returnToOrder = returnToOrder;
 
     vm.juicesNutritions = [];
 
@@ -48,5 +50,15 @@
       }
       return retNuts;
     }
-  }
+
+    function checkout() {
+      $log.info("going to cart");
+      $state.go("cart");
+    };
+
+    function returnToOrder() {
+      $log.info("returning to order");
+      $state.go("order");
+    };
+  };
 })();
