@@ -13,7 +13,7 @@
     <h6>step one: choose your ingredients</h6>
   </div>
   <div class="row">
-    <div class="col s3 m3 l3">
+    <div class="col s12 m3 l3">
       <h6>fruits</h6>
       <hr>
         <ul>
@@ -22,7 +22,7 @@
               ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
-    <div class="col s3 m3 l3">
+    <div class="col s12 m3 l3">
       <h6>vegetables</h6>
       <hr>
         <ul>
@@ -31,7 +31,7 @@
           ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
-    <div class="col s3 m3 l3">
+    <div class="col s12 m3 l3">
       <h6>sweet</h6>
       <hr>
         <ul>
@@ -40,7 +40,7 @@
           ng-click="vm.addIng(ingredient)">{{ ingredient.name }}</li>
         </ul>
     </div>
-     <div class="col s3 m3 l3">
+     <div class="col s12 m3 l3">
       <h6>extras</h6>
       <hr>
         <ul>
@@ -58,7 +58,7 @@
   <div class="row" id="juice-sizes">
     <div ng-click="vm.selectJuiceSize(juice);"
          ng-repeat="juice in vm.data.juices"
-         class="card-content hoverable col s3 m3 l3 touchable"
+         class="card-content hoverable col s12 m3 l3 touchable"
          ng-class="{'text-highlight': vm.newJuice.size === juice.size}">
       <h6>{{juice.type}}</h6>
       <hr>

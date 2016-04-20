@@ -1,4 +1,4 @@
-Animate route change*/
+/*Animate route change*/
 
 [ui-view].ng-enter {
   transition: all 1s ease;
