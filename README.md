@@ -25,7 +25,10 @@ Visit [Juicy](https://morning-wave-96713.herokuapp.com/#/)
 ##Design
 My goal was to design a user friendly app that has a clean a concise design in order for the user to have the simplest ordering experience. Users can view information about the app before logging in. If they would like to order they must either log in or create an account. Once they do so they are navigated to the home page. They then can choose to order they're customized juice by choosing the ingredients and size then a pick or order time and date. 
 
-
+![](https://i.imgur.com/qAkt04x.png)
+![](https://i.imgur.com/w7hbdYK.png)
+![](https://i.imgur.com/RdxgOgH.png)
+![](https://i.imgur.com/00CiYZ8.png)
 ##Development
 MEAN Stack | HTML | CSS | jQuery | Materialize | Auth | lo-dash
 
